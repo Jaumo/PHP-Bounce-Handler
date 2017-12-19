@@ -156,6 +156,7 @@ class BounceHandler {
                 $my_code = $this->formatStatusCode($hash['Status']);
                 $this->output[$key]['status'] = $my_code['code'];
                 $this->output[$key]['action'] = $hash['Action'];
+                $this->output[$key]['message'] = $hash['Diagnostic-code']['text'];
             }
         } elseif (isset($this->head_hash['X-failed-recipients'])) {
             //  Busted Exim MTA
